@@ -2,7 +2,7 @@ import requests
 import json
 
 def get_movies_from_tastedive(movie):
-    #give your Access_key to testdrive as Access key1
+    #give your Access_key to TasteDive as Access key1
     params = {'q':movie, 'type':'movies', 'limit':5, 'k':Access_key1} 
     result = requests.get("https://tastedive.com/api/similar", params = params)
     return result.json()
@@ -24,7 +24,7 @@ def get_related_titles(lst):
     return result
 
 def get_movie_data(movie):
-    #give your access key to omdbapi as Access_key2
+    #give your access key to OMDB as Access_key2
     result = requests.get("http://www.omdbapi.com/", params = {'t':movie, 'r':'json', apikey:access_key2})
     result = result.text
     return json.loads(result)
